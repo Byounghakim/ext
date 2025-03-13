@@ -6,7 +6,6 @@ const nextConfig = {
   // 외부 URL로의 이미지 요청 허용
   images: {
     domains: ['api.codingpen.com'],
-    unoptimized: true, // 정적 내보내기에 필요
   },
   // webpack 설정 추가 (필요한 경우)
   webpack: (config, { isServer }) => {

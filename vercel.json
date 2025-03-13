@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "CI=false SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true NEXT_DISABLE_ESLINT=1 NODE_OPTIONS=--max_old_space_size=4096 next build",
-  "installCommand": "npm install --force && node scripts/disable-eslint.js",
+  "installCommand": "npm install --force && node scripts/disable-eslint.js && node scripts/disable-next-output-export.js",
   "framework": "nextjs",
   "env": {
     "DISABLE_ESLINT_PLUGIN": "true",
