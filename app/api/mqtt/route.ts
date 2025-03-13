@@ -1,29 +1,12 @@
-import { WebSocketServer } from "ws"
 import { NextResponse } from "next/server";
-import mqtt from "mqtt"
 
-const wss = new WebSocketServer({ port: 3000 })
-const mqttClient = mqtt.connect("wss://api.codingpen.com:8884", {
-  username: "dnature",
-  password: "XihQ2Q%RaS9u#Z3g",
-  protocol: "wss",
-  rejectUnauthorized: false,
-})
-
-mqttClient.on("message", (topic, message) => {
-  wss.clients.forEach((client) => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(
-        JSON.stringify({
-          topic,
-          message: message.toString(),
-        }),
-      )
-    }
-  })
-})
+// WebSocket 서버를 직접 시작하는 코드 제거
+// 서버는 별도의 파일에서 실행해야 합니다
 
 export async function GET() {
-  return NextResponse.json({ status: "MQTT Connected" });
+  return NextResponse.json({ 
+    status: "MQTT API Ready",
+    message: "WebSocket 서버를 API 라우트에서 직접 시작하면 안 됩니다. 별도 서비스로 분리해야 합니다."
+  });
 }
 
