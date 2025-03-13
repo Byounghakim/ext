@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  // 정적 내보내기를 위한 설정
-  output: 'export',
+  // 정적 내보내기 설정 제거 (Vercel 배포 문제 해결)
+  // output: 'export',  
   // 외부 URL로의 이미지 요청 허용
   images: {
     domains: ['api.codingpen.com'],
